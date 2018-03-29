@@ -4,6 +4,11 @@ $(function () {
     var $countriesList = $('#countries');
 
     $('#search').click(searchCountries);
+    $('#country-name').keydown(function (event) {
+        if (event.which === 13) {
+            searchCountries();
+        }
+    });
 
     function searchCountries() {
         var $countryName = $('#country-name').val();
